@@ -24,16 +24,15 @@ In your project's Gruntfile, add a section named `surepatch` to the data object 
 
 ```js
 grunt.initConfig({
-		surepatch: {
-			dist: {
-				auth: {
-					auth_token: 'Your user token from SurePatch',
-					project_token: 'Your project token from SurePatch',
-				},
-				filePath: 'path-to-file'
-				//
-			}
+	surepatch: {
+		dist: {
+			auth: {
+				auth_token: 'Your user token from SurePatch',
+				project_token: 'Your project token from SurePatch',
+			},
+			filePath: 'path-to-file'
 		}
+	}
 });
 ```
 
