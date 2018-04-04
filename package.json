@@ -1,0 +1,39 @@
+{
+	"name": "grunt-surepatch",
+	"description": "helps your secure your most valuable systems and data",
+	"version": "0.1.0",
+	"homepage": "surepatch.com",
+	"author": {
+		"name": "BrainBankers",
+		"email": "sales@brainbankers.com",
+		"url": "brainbankers.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "your most valuable systems and data"
+	},
+	"bugs": {
+		"url": ""
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "surepatch.com/blob/master/LICENSE-MIT"
+		}
+	],
+	"engines": {
+		"node": ">= 0.8.0"
+	},
+	"scripts": {
+		"test": "grunt test"
+	},
+	"devDependencies": {
+		"grunt-contrib-jshint": "^0.9.2",
+		"grunt-contrib-clean": "^0.5.0",
+		"grunt-contrib-nodeunit": "^0.3.3",
+		"grunt": "~0.4.5"
+	},
+	"keywords": [
+		"grunt-surepatch"
+	]
+}
