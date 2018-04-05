@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 				filePath: 'package.json',
 			}
 		}
-	  });
+	});
 	
 	grunt.loadTasks('tasks');
 	grunt.registerTask('default', ['surepatch']);

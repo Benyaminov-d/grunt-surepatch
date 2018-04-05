@@ -8,6 +8,7 @@
 
 'use strict';
 var request = require('request');
+var fs = require('fs');
 
 module.exports = function(grunt) {
 
@@ -29,9 +30,17 @@ module.exports = function(grunt) {
 			grunt.fail.fatal("Wrong initConfig for grunt-surepatch", 400);
 		}
 
-		var file = JSON.parse(grunt.file.read(path, {}));
+		// var file = JSON.parse(grunt.file.read(path, {}));
+		var fileStream = fs.createReadStream(path);
 
-		request.post({url:'https://localhost:5555/api/taskrunners/components', rejectUnauthorized: false, form: {file: file, credentials: auth}}, function(err, httpResponse, body) {
+		request.post({
+			url:'https://localhost:5555/api/taskrunners/components',
+			rejectUnauthorized: false,
+			formData: {
+				credentials: JSON.stringify(auth),
+				file: fileStream
+			}
+		}, function(err, httpResponse, body) {
 			if (err) {
 				grunt.log.error(err);
 				grunt.fail.fatal('Request failed', err.status || 400);
@@ -46,5 +55,20 @@ module.exports = function(grunt) {
 			}
 			done();
 		});
+		// request.post({url:'https://localhost:5555/api/taskrunners/components', rejectUnauthorized: false, form: {file: file, credentials: auth}}, function(err, httpResponse, body) {
+		// 	if (err) {
+		// 		grunt.log.error(err);
+		// 		grunt.fail.fatal('Request failed', err.status || 400);
+		// 	} else {
+		// 		var response = JSON.parse(body);
+		// 		if (response.status === 400) {
+		// 			grunt.log.error(response.type);
+		// 			grunt.fail.fatal('Request failed', response.status || 400);
+		// 		} else {
+		// 			grunt.log.ok(response.type || response);
+		// 		}
+		// 	}
+		// 	done();
+		// });
 	});
 };
