@@ -55,20 +55,5 @@ module.exports = function(grunt) {
 			}
 			done();
 		});
-		// request.post({url:'https://localhost:5555/api/taskrunners/components', rejectUnauthorized: false, form: {file: file, credentials: auth}}, function(err, httpResponse, body) {
-		// 	if (err) {
-		// 		grunt.log.error(err);
-		// 		grunt.fail.fatal('Request failed', err.status || 400);
-		// 	} else {
-		// 		var response = JSON.parse(body);
-		// 		if (response.status === 400) {
-		// 			grunt.log.error(response.type);
-		// 			grunt.fail.fatal('Request failed', response.status || 400);
-		// 		} else {
-		// 			grunt.log.ok(response.type || response);
-		// 		}
-		// 	}
-		// 	done();
-		// });
 	});
 };
